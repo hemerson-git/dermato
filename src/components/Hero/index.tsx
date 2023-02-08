@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Fade } from "react-awesome-reveal";
+
 import { Button } from "../Button";
 
 export function Hero() {
@@ -21,12 +23,14 @@ export function Hero() {
         </div>
 
         <div className="flex-1">
-          <Image
-            src="/destaque.png"
-            width={617}
-            height={480}
-            alt="Mulher segurando um produto de beleza"
-          />
+          <Fade>
+            <Image
+              src="/destaque.png"
+              width={617}
+              height={480}
+              alt="Mulher segurando um produto de beleza"
+            />
+          </Fade>
         </div>
       </div>
     </section>

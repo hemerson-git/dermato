@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { Fade, Slide } from "react-awesome-reveal";
 
 import * as Separator from "@radix-ui/react-separator";
 import { InstagramLogo, FacebookLogo, YoutubeLogo } from "phosphor-react";
@@ -43,7 +44,7 @@ const products = [
   {
     title: "Drenagem linfática",
     description:
-      "Ajuda na eliminação de toxinas, melhora o sistema imunológico, melhora a aparência de celulite.",
+      "Ajuda na eliminação de toxinas, melhora o sistema \n imunológico, melhora a aparência de celulite.",
     image: "/icon_4.svg",
   },
   {
@@ -116,18 +117,20 @@ export default function Home() {
             </h2>
 
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-14 odd:text-red-500">
-              {products.map((product, index) => (
-                <CardIcon
-                  description={product.description}
-                  imageURL={product.image}
-                  title={product.title}
-                  isOdd={index % 2 === 0}
-                  key={
-                    String(product.title.toLowerCase).replaceAll(" ", "_") +
-                    index
-                  }
-                />
-              ))}
+              <Fade cascade duration={400}>
+                {products.map((product, index) => (
+                  <CardIcon
+                    description={product.description}
+                    imageURL={product.image}
+                    title={product.title}
+                    isOdd={index % 2 === 0}
+                    key={
+                      String(product.title.toLowerCase).replaceAll(" ", "_") +
+                      index
+                    }
+                  />
+                ))}
+              </Fade>
             </div>
           </div>
         </section>
@@ -135,40 +138,44 @@ export default function Home() {
         <section className="pt-20 pb-16 px-9 sm:px-10 md:px-16 bg-white">
           <div className="container flex flex-col items-center sm:flex-row gap-5">
             <div className="hidden sm:flex sm:flex-[4] justify-center">
-              <Image
-                src="/picture.png"
-                width={399}
-                height={598}
-                alt=""
-                draggable={false}
-              />
+              <Slide>
+                <Image
+                  src="/picture.png"
+                  width={399}
+                  height={598}
+                  alt=""
+                  draggable={false}
+                />
+              </Slide>
             </div>
 
             <div className="text-xl text-gray-900 sm:flex-[6]">
-              <h2 className="text-2xl sm:text-5xl text-primary-500 font-bold mb-[38px]">
-                Tratamentos dermatológicos
-              </h2>
+              <Slide direction="up">
+                <h2 className="text-2xl sm:text-5xl text-primary-500 font-bold mb-[38px]">
+                  Tratamentos dermatológicos
+                </h2>
 
-              <p className="mb-5">
-                Há alguns anos, quando se falava em tecnologia, ela era
-                associada apenas à engenharia e à ciência. Hoje a situação é
-                diferente: nossas clientes já desfrutam de diversos tratamentos
-                modernos, com segurança e rápida recuperação.
-              </p>
+                <p className="mb-5">
+                  Há alguns anos, quando se falava em tecnologia, ela era
+                  associada apenas à engenharia e à ciência. Hoje a situação é
+                  diferente: nossas clientes já desfrutam de diversos
+                  tratamentos modernos, com segurança e rápida recuperação.
+                </p>
 
-              <ul className="text-lg text-black mb-5 list-disc list-inside">
-                <li>Ultraformer III</li>
-                <li>Laser de CO2</li>
-                <li>Fotona 4D</li>
-                <li>Reveal Imager</li>
-              </ul>
+                <ul className="text-lg text-black mb-5 list-disc list-inside">
+                  <li>Ultraformer III</li>
+                  <li>Laser de CO2</li>
+                  <li>Fotona 4D</li>
+                  <li>Reveal Imager</li>
+                </ul>
 
-              <p className="mb-6">
-                Nossa clínica conta com softwares, sistemas e câmeras de alta
-                resolução que nos ajudam a diagnosticar, mapear e documentar
-                doenças da pele, cabelos e unhas, permitindo um diagnóstico e
-                tratamento mais preciso.
-              </p>
+                <p className="mb-6">
+                  Nossa clínica conta com softwares, sistemas e câmeras de alta
+                  resolução que nos ajudam a diagnosticar, mapear e documentar
+                  doenças da pele, cabelos e unhas, permitindo um diagnóstico e
+                  tratamento mais preciso.
+                </p>
+              </Slide>
 
               <Button>Agendar Consulta</Button>
             </div>
@@ -182,13 +189,15 @@ export default function Home() {
             </div>
 
             <div className="hidden sm:flex sm:flex-[4]">
-              <Image
-                src="/picture_2.png"
-                width={399}
-                height={598}
-                draggable={false}
-                alt=""
-              />
+              <Slide direction="right">
+                <Image
+                  src="/picture_2.png"
+                  width={399}
+                  height={598}
+                  draggable={false}
+                  alt=""
+                />
+              </Slide>
             </div>
           </div>
         </section>

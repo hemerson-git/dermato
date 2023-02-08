@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ReactStars from "react-stars";
 
 type Props = {
   imageURL: string;
@@ -17,7 +18,7 @@ export function CardCostumer({
 }: Props) {
   return (
     <div
-      className={`flex items-center gap-3 sm:gap-5 text-gray-900 bg-white p-5 sm:p-10 rounded-[5] ${className}`}
+      className={`flex items-center gap-3 sm:gap-5 text-gray-900 bg-white hover:shadow-lg p-5 sm:p-10 rounded-[5] ${className}`}
     >
       <Image
         src={imageURL}
@@ -32,6 +33,16 @@ export function CardCostumer({
           {name}
         </span>
         <span className="sm:pr-8 text-xs sm:text-lg">{description}</span>
+        <ReactStars
+          className="text-3xl"
+          count={5}
+          color1="#F7F7F7"
+          color2="#FFd700"
+          size={28}
+          value={stars}
+          edit={false}
+          onChange={() => null}
+        />
       </div>
     </div>
   );

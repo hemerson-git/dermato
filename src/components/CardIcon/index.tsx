@@ -9,7 +9,10 @@ type CardProps = {
 
 export function CardIcon({ title, description, imageURL, isOdd }: CardProps) {
   return (
-    <div className="bg-white rounded-[5px] pt-5 pl-5 pr-8 pb-8 hover:shadow-lg ">
+    <div
+      className="
+      bg-white rounded-[5px] pt-5 pl-8 pr-10 pb-8 hover:shadow-lg  transition-shadow h-[216px]"
+    >
       <div>
         <Image
           src={imageURL}
