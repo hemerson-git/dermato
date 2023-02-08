@@ -28,8 +28,10 @@ export function CardCostumer({
       />
 
       <div className="flex flex-col">
-        <span className="font-bold font-xl text-black mb-3">{name}</span>
-        <span>{description}</span>
+        <span className="font-bold text-xl text-black mb-3 border-b-2 pb-2 border-gray-900">
+          {name}
+        </span>
+        <span className="pr-8 text-lg">{description}</span>
       </div>
     </div>
   );

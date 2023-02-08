@@ -19,7 +19,7 @@ export function Accordion({ items }: AccordionProps) {
         >
           <RadixAccordion.Trigger>
             <RadixAccordion.Header className="flex p-5 w-full justify-between items-center">
-              <span className="text-xl font-bold text-gray-900">
+              <span className="sm:text-xl font-bold text-gray-900">
                 {item.title}
               </span>
 

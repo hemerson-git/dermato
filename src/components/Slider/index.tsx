@@ -36,7 +36,7 @@ export function Slider({ children }: Props) {
 
   return (
     <div className="">
-      <div className="relative px-14">
+      <div className="relative px-10 sm:px-[100px]">
         <div ref={sliderRef} className="keen-slider relative z-20">
           {children}
         </div>
@@ -50,7 +50,10 @@ export function Slider({ children }: Props) {
               aria-label="slide anterior"
               className="cursor-pointer"
             >
-              <CaretLeft size={51} className="text-primary-500" weight="bold" />
+              <CaretLeft
+                className="text-primary-500 text-xl sm:text-[51px]"
+                weight="bold"
+              />
             </button>
 
             <button
@@ -63,8 +66,7 @@ export function Slider({ children }: Props) {
               className="cursor-pointer"
             >
               <CaretRight
-                size={51}
-                className="text-primary-500"
+                className="text-primary-500 text-xl sm:text-[51px]"
                 weight="bold"
               />
             </button>

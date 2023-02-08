@@ -106,7 +106,7 @@ export default function Home() {
         <Counter />
 
         <section className="pt-20 pb-16 px-10 container">
-          <h2 className="text-primary-500 font-bold text-4xl pb-[60px] text-center">
+          <h2 className="text-primary-500 font-bold text-2xl sm:text-5xl pb-[60px] text-center">
             Tratamentos estéticos
           </h2>
 
@@ -138,7 +138,7 @@ export default function Home() {
             </div>
 
             <div className="text-xl text-gray-900 sm:flex-[6]">
-              <h2 className="text-4xl text-primary-500 font-bold mb-[38px]">
+              <h2 className="text-2xl sm:text-5xl text-primary-500 font-bold mb-[38px]">
                 Tratamentos dermatológicos
               </h2>
 
@@ -188,8 +188,8 @@ export default function Home() {
 
         <section className="pt-20 pb-16 px-10">
           <div className="container">
-            <h2 className="text-4xl text-primary-500 font-bold mb-20 text-center">
-              Tratamentos dermatológicos
+            <h2 className="text-2xl sm:text-4xl text-primary-500 font-bold mb-20 text-center">
+              O que as nossas clientes dizem?
             </h2>
 
             <Slider>
@@ -202,9 +202,9 @@ export default function Home() {
               />
 
               <CardCostumer
-                name="Débora Souza"
+                name="Daiene Rodrigues"
                 description="Really good quality, lovely packaging & delivery. Love it!"
-                imageURL="/customer.jpg"
+                imageURL="/customer_2.jpg"
                 stars={5}
                 className="keen-slider__slide"
               />
@@ -218,11 +218,11 @@ export default function Home() {
               />
 
               <CardCostumer
-                name="Débora Souza"
+                name="Daiene Rodrigues"
                 description="Really good quality, lovely packaging & delivery. Love it!"
-                imageURL="/customer.jpg"
-                className="keen-slider__slide"
+                imageURL="/customer_2.jpg"
                 stars={5}
+                className="keen-slider__slide"
               />
             </Slider>
           </div>
