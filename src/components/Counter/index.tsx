@@ -25,8 +25,8 @@ export function Counter() {
   return (
     <section
       className="
-      relative before:content-[''] 
-      before:absolute before:top-0 before:h-1/2 before:w-full before:bg-white before:left-0 "
+      relative before:content-[''] px-9 sm:px-10 md:px-16
+      before:absolute before:top-0 before:h-1/2 before:w-full before:bg-light-200 before:left-0 "
     >
       <div
         className="

@@ -12,8 +12,8 @@ export function Header() {
       ref={headerRef}
       id="main-header"
       className="
-      bg-gray-50 text-secondary-500 font-bold flex 
-      py-12 px-10 relative
+      bg-light-200 text-secondary-500 font-bold flex 
+      py-12 px-9 sm:px-10 md:px-16 relative
     "
     >
       <div className="container mx-auto flex justify-between items-center">
@@ -48,19 +48,39 @@ export function Header() {
             }`}
           >
             <li>
-              <Link href="/">Início</Link>
+              <Link
+                href="/"
+                className="hover:text-primary-500 transition-colors"
+              >
+                Início
+              </Link>
             </li>
 
             <li>
-              <Link href="/">Serviços</Link>
+              <Link
+                href="/"
+                className="hover:text-primary-500 transition-colors"
+              >
+                Serviços
+              </Link>
             </li>
 
             <li>
-              <Link href="/">Sobre</Link>
+              <Link
+                href="/"
+                className="hover:text-primary-500 transition-colors"
+              >
+                Sobre
+              </Link>
             </li>
 
             <li>
-              <Link href="/">Contato</Link>
+              <Link
+                href="/"
+                className="hover:text-primary-500 transition-colors"
+              >
+                Contato
+              </Link>
             </li>
           </ul>
         </nav>

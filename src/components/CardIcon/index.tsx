@@ -19,8 +19,8 @@ export function CardIcon({ title, description, imageURL, isOdd }: CardProps) {
           className="float-left mr-4 h-auto"
         />
         <h3
-          className={`text-xl font-bold py-5 ${
-            isOdd ? "text-primary-500" : "text-black"
+          className={`text-lg sm:text-xl font-bold py-5 ${
+            !isOdd ? "text-primary-500" : "text-black"
           }`}
         >
           {title}

@@ -36,7 +36,7 @@ export function Slider({ children }: Props) {
 
   return (
     <div className="">
-      <div className="relative px-10 sm:px-[100px]">
+      <div className="relative px-7 sm:px-[100px]">
         <div ref={sliderRef} className="keen-slider relative z-20">
           {children}
         </div>
@@ -75,7 +75,7 @@ export function Slider({ children }: Props) {
       </div>
 
       {loaded && instanceRef.current && (
-        <div className="flex justify-center gap-9 mt-10">
+        <div className="flex justify-center gap-5 sm:gap-9 mt-10">
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
           ].map((idx) => {
@@ -86,7 +86,7 @@ export function Slider({ children }: Props) {
                   instanceRef.current?.moveToIdx(idx);
                 }}
                 className={
-                  "w-5 h-5 rounded-full" +
+                  "w-3 h-3 sm:w-5 sm:h-5 rounded-full" +
                   (currentSlide === idx
                     ? " bg-primary-500 active"
                     : " bg-gray-50")

@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 
+import * as Separator from "@radix-ui/react-separator";
+import { InstagramLogo, FacebookLogo, YoutubeLogo } from "phosphor-react";
+
 // Components
 import { CardIcon } from "@/components/CardIcon";
 import { Counter } from "@/components/Counter";
@@ -10,6 +13,7 @@ import { Button } from "@/components/Button";
 import { Accordion } from "@/components/Accordion";
 import { CardCostumer } from "@/components/CardCostumer";
 import { Slider } from "@/components/Slider";
+import Link from "next/link";
 
 const products = [
   {
@@ -105,27 +109,30 @@ export default function Home() {
         <Hero />
         <Counter />
 
-        <section className="pt-20 pb-16 px-10 container">
-          <h2 className="text-primary-500 font-bold text-2xl sm:text-5xl pb-[60px] text-center">
-            Tratamentos estéticos
-          </h2>
+        <section className="pt-20 pb-16 px-9 sm:px-10 md:px-16">
+          <div className="container">
+            <h2 className="text-primary-500 font-bold text-2xl sm:text-5xl pb-[60px] text-center">
+              Tratamentos estéticos
+            </h2>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-14 odd:text-red-500">
-            {products.map((product, index) => (
-              <CardIcon
-                description={product.description}
-                imageURL={product.image}
-                title={product.title}
-                isOdd={index % 2 === 0}
-                key={
-                  String(product.title.toLowerCase).replaceAll(" ", "_") + index
-                }
-              />
-            ))}
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-14 odd:text-red-500">
+              {products.map((product, index) => (
+                <CardIcon
+                  description={product.description}
+                  imageURL={product.image}
+                  title={product.title}
+                  isOdd={index % 2 === 0}
+                  key={
+                    String(product.title.toLowerCase).replaceAll(" ", "_") +
+                    index
+                  }
+                />
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="pt-20 pb-16 px-10 bg-white">
+        <section className="pt-20 pb-16 px-9 sm:px-10 md:px-16 bg-white">
           <div className="container flex flex-col items-center sm:flex-row gap-5">
             <div className="hidden sm:flex sm:flex-[4] justify-center">
               <Image
@@ -168,7 +175,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="pt-20 pb-16 px-10 bg-white text-black">
+        <section className="pt-20 pb-16 px-9 sm:px-10 md:px-16 bg-white text-black">
           <div className="container flex gap-20 items-start">
             <div className="sm:flex-[6]">
               <Accordion items={accordionItems} />
@@ -186,7 +193,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="pt-20 pb-16 px-10">
+        <section className="pt-20 pb-16 px-9 sm:px-10 md:px-16">
           <div className="container">
             <h2 className="text-2xl sm:text-4xl text-primary-500 font-bold mb-20 text-center">
               O que as nossas clientes dizem?
@@ -227,6 +234,86 @@ export default function Home() {
             </Slider>
           </div>
         </section>
+
+        <footer className="pt-20 pb-16 px-9 sm:px-10 md:px-16 bg-secondary-500 text-gray-50">
+          <div className="container">
+            <div className="flex flex-col sm:flex-row sm:justify-between">
+              <h2 role="figure" className="text-2xl font-bold mb-9 uppercase">
+                Dermato
+              </h2>
+
+              <div className="font-bold flex flex-col">
+                <h3 className="uppercase mb-9">Contato</h3>
+
+                <span className="mb-4">+55 21 9999-9999</span>
+                <span>contato@dermato.com.br</span>
+
+                <Separator.Root className="bg-gray-50 w-full h-[1px] mb-4 mt-4" />
+
+                <span className="mb-4">Rua São Paulo, 45 - Americana</span>
+                <span>Americana - SP</span>
+
+                <Separator.Root className="bg-gray-50 w-full h-[1px] mb-4 mt-4" />
+
+                <div className="flex gap-10 text-3xl mb-12">
+                  <Link href="/">
+                    <InstagramLogo />
+                  </Link>
+
+                  <Link href="/">
+                    <FacebookLogo />
+                  </Link>
+
+                  <Link href="/">
+                    <YoutubeLogo />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="font-bold mb-14">
+                <h3 className="text-xl mb-9">Informações</h3>
+
+                <nav>
+                  <ul className="flex flex-col">
+                    <li className="mb-4">
+                      <Link
+                        className="hover:text-primary-500 transition-colors
+                      "
+                        href="/"
+                      >
+                        Procedimentos
+                      </Link>
+                    </li>
+
+                    <li className="mb-4">
+                      <Link
+                        className="hover:text-primary-500 transition-colors
+                      "
+                        href="/"
+                      >
+                        Contato
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        className="hover:text-primary-500 transition-colors
+                      "
+                        href="/"
+                      >
+                        Termos e Condições
+                      </Link>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+
+            <span className="font-bold">
+              Dermato Alguns direitos reservados
+            </span>
+          </div>
+        </footer>
       </main>
     </div>
   );
