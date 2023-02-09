@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Fade, Slide } from "react-awesome-reveal";
 
 import * as Separator from "@radix-ui/react-separator";
@@ -16,9 +17,7 @@ import { Button } from "@/components/Button";
 import { Accordion } from "@/components/Accordion";
 import { CardCostumer } from "@/components/CardCostumer";
 import { Slider } from "@/components/Slider";
-import Link from "next/link";
-import { Modal } from "@/components/Modal";
-import { Input } from "@/components/Form/input";
+import { ScheduleModal } from "@/components/ScheduleModal";
 
 const products = [
   {
@@ -186,64 +185,7 @@ export default function Home() {
                   <Button title="agendar consulta">Agendar Consulta</Button>
                 </Dialog.Trigger>
 
-                <Modal title="Agendar Consulta">
-                  <form>
-                    <div className="flex gap-2 mb-4">
-                      <div className="flex flex-col flex-1">
-                        <label
-                          htmlFor="name"
-                          className="font-bold mb-2 select-none"
-                        >
-                          Nome Completo
-                        </label>
-                        <Input
-                          type="text"
-                          name="name"
-                          id="name"
-                          placeholder="Seu Nome"
-                          required
-                        />
-                      </div>
-
-                      <div className="flex flex-col flex-1">
-                        <label
-                          htmlFor="phone"
-                          className="font-bold mb-2 select-none"
-                        >
-                          Telefone
-                        </label>
-                        <Input
-                          type="tel"
-                          name="phone"
-                          id="phone"
-                          placeholder="(99) 99999-9999"
-                          pattern="(99) 99999-9999"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col mb-4">
-                      <label
-                        htmlFor="email"
-                        className="font-bold mb-2 select-none"
-                      >
-                        Email
-                      </label>
-                      <Input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="exemplo@email.com"
-                        required
-                      />
-                    </div>
-
-                    <footer>
-                      <Button onClick={() => {}}>Agendar</Button>
-                    </footer>
-                  </form>
-                </Modal>
+                <ScheduleModal />
               </Dialog.Root>
             </div>
           </div>
