@@ -10,13 +10,22 @@ Is a project designed by [Bruna](https://www.linkedin.com/in/oliveirabrunati) us
 
 ## 🔌 Tecnologies
 
-<img src="https://i.ibb.co/PZ2XZgr/ts.png" width="20"/> <b>TypeScript</b>,
-<img src="https://i.ibb.co/4RHMmLQ/react.png" width="20"/> <b>React Js</b>,
+<img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
+
+<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+
+
+<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
+
 
 ## 🎨 Layout Preview
-<video src='.github/dermato.webm?raw=true'/>
+[Go to Site](https://dermato-eight.vercel.app/)
+<img src='.github/dermato.gif?raw=true' width="500"/>
 
-[Deploy](https://dermato-eight.vercel.app/)
 
 ## 👨‍💻 Running
 
