@@ -1,10 +1,24 @@
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
+import * as Dialog from "@radix-ui/react-dialog";
 
+// Components
 import { Button } from "../Button";
+import { ScheduleModal } from "../ScheduleModal";
+import { FieldValues } from "react-hook-form/dist/types/fields";
+import { Toast } from "../Toast";
 
 export function Hero() {
+  const [isToastOpen, setIsToastOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function handleSubmit(data: FieldValues) {
+    setIsToastOpen(true);
+    setIsModalOpen(false);
+    console.log(data);
+  }
+
   return (
     <section className="bg-light-200 flex px-9 sm:px-10 md:px-16">
       <div className="flex items-center container mx-auto flex-col sm:flex-row">
@@ -19,7 +33,20 @@ export function Hero() {
             personalizados para você.
           </span>
 
-          <Button>Agendar consulta</Button>
+          <Dialog.Root modal open={isModalOpen} onOpenChange={setIsModalOpen}>
+            <Dialog.Trigger asChild>
+              <Button title="agendar consulta">Agendar Consulta</Button>
+            </Dialog.Trigger>
+
+            <ScheduleModal onSubmit={handleSubmit} />
+          </Dialog.Root>
+
+          <Toast
+            title="Agendamento Concluído"
+            description={`Obrigado por agendar conosco! Agradecemos a preferência!`}
+            isOpen={isToastOpen}
+            setIsOpen={setIsToastOpen}
+          />
         </div>
 
         <div className="flex-1">

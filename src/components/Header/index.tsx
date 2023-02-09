@@ -18,7 +18,7 @@ export function Header() {
     >
       <div className="container mx-auto flex justify-between items-center">
         <span className="text-lg uppercase hidden sm:flex" role="img">
-          Logo
+          Dermato
         </span>
 
         <button

@@ -11,9 +11,12 @@ type Props = {
 export function Modal({ children, title }: Props) {
   return (
     <Dialog.Portal className="">
-      <Dialog.Overlay className="fixed w-screen min-h-screen flex items-center justify-center top-0 left-0 bg-gray-200/70 backdrop-blur-sm">
+      <Dialog.Overlay
+        className="fixed w-screen min-h-screen flex items-center justify-center 
+          top-0 left-0 bg-gray-200/70 backdrop-blur-sm z-50"
+      >
         <Dialog.Content className="  ">
-          <div className="bg-gray-50 w-[600px] max-w-full rounded-[5px] p-6">
+          <div className="bg-gray-50 w-[340px] sm:w-[600px] rounded-[5px] p-6">
             <div className="flex items-center justify-between mb-4">
               <Dialog.Title className="text-primary-500 font-bold text-xl sm:text-2xl">
                 {title}

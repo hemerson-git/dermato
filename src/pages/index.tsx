@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +19,7 @@ import { Accordion } from "@/components/Accordion";
 import { CardCostumer } from "@/components/CardCostumer";
 import { Slider } from "@/components/Slider";
 import { ScheduleModal } from "@/components/ScheduleModal";
+import { Toast } from "@/components/Toast";
 
 const products = [
   {
@@ -101,6 +103,14 @@ const accordionItems = [
 ];
 
 export default function Home() {
+  const [isToastOpen, setIsToastOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function handleSubmit() {
+    setIsToastOpen(true);
+    setIsModalOpen(false);
+  }
+
   return (
     <div className="bg-bg-theme-500 min-h-screen text-gray-100">
       <Head>
@@ -180,13 +190,24 @@ export default function Home() {
                 </p>
               </Slide>
 
-              <Dialog.Root modal>
+              <Dialog.Root
+                modal
+                open={isModalOpen}
+                onOpenChange={setIsModalOpen}
+              >
                 <Dialog.Trigger asChild>
                   <Button title="agendar consulta">Agendar Consulta</Button>
                 </Dialog.Trigger>
 
-                <ScheduleModal />
+                <ScheduleModal onSubmit={handleSubmit} />
               </Dialog.Root>
+
+              <Toast
+                title="Agendamento Concluído"
+                description={`Obrigado por agendar conosco! Agradecemos a preferência!`}
+                isOpen={isToastOpen}
+                setIsOpen={setIsToastOpen}
+              />
             </div>
           </div>
         </section>
