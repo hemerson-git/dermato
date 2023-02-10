@@ -24,10 +24,10 @@ Is a project designed by [Bruna](https://www.linkedin.com/in/oliveirabrunati) us
 
 ## 🎨 Layout Preview
 [Go to Site](https://dermato-eight.vercel.app/)
-<p>
-  <img src='.github/dermato.gif?raw=true' width="500"/>
-</p>
 
+<p>
+ <img src='.github/dermato.gif?raw=true' width="500"/>
+</p>
 
 ## 👨‍💻 Running
 
