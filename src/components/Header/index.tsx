@@ -37,14 +37,14 @@ export function Header() {
           className={`hidden sm:block ${
             isNavExpanded
               ? `
-                absolute top-full w-full backdrop-blur-lg 
+                absolute top-full w-full backdrop-blur-lg bg-light-200 min-h-screen z-40
                 left-0 h-[calc(100vh_-_${headerHeight}px)] !flex`
               : ""
           }`}
         >
           <ul
             className={`flex gap-12 ${
-              isNavExpanded ? "flex-col text-center justify-center w-full" : ""
+              isNavExpanded ? "flex-col text-center w-full" : ""
             }`}
           >
             <li>
